@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+      </style>
+  <title>About</title>
+
+<style>
+  *,
+  *::before,
+  *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  }
+
+  html {
+  scroll-behavior: smooth;
+  }
+
+  body {
+  color:#6d3119;
+  font-family: 'Montserrat', sans-serif;
+  }
+
+  h1 {
+  margin-top: 1rem;
+  text-align: center;
+  color:#be3019;
+  }
+
+  @media only screen and (max-width:300px) {
+    h1 {
+        font-size: 12px;
+      }
+  }
+
+  @media only screen and (min-width:301px) and (max-width:1600px) {
+    h1 {
+        font-size: calc(12px + (30 - 12) * ((100vw - 300px) / (1600 - 300)));
+    }
+  }
+
+  h2 {
+  margin:20px;
+  text-align: center;
+  font-weight: bolder;
+  color:#be3019;
+  }
+
+  @media only screen and (max-width:300px) {
+    h2 {
+        font-size: 12px;
+      }
+  }
+
+  @media only screen and (min-width:301px) and (max-width:1600px) {
+    h2 {
+        font-size: calc(12px + (30 - 12) * ((100vw - 300px) / (1600 - 300)));
+    }
+  }
+
+/* start:flexbox basic setting */
+   body .header {
+     display:flex;
+   }
+
+   body .header .box {
+     flex: auto;
+   }
+/* end:flexbox basic setting */
+
+  @media only screen and (max-width: 640px) {
+  body .header {
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 50vh;
+    background-color:#ebded9;
+  color:#6d3119;
+  box-shadow: 5px 10px 8px #6d3119;
+  z-index:10;
+    }
+  }
+
+  @media only screen and (min-width: 641px) and (max-width: 1000px) {
+  body .header {
+    flex-wrap: wrap;
+    flex-direction: column;
+   height: 30vh;
+   background-color:#ebded9;
+  color:#6d3119;
+  box-shadow: 5px 10px 8px #6d3119;
+  z-index:10;
+    }
+  }
+
+  @media only screen and (min-width: 1001px) {
+  body .header {
+  position:-webkit-sticky;
+  position:sticky;
+  justify-content:space-evenly;
+  top:0;
+  height: 15vh;
+  background-color:#ebded9;
+  color:#6d3119;
+  box-shadow: 5px 10px 8px #6d3119;
+  z-index:10;
+  }
+}
+
+  body .header .logo {
+    box-sizing: border-box;
+  }
+   
+  body .header .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+    
+  body .header .title {
+    margin: auto;
+    text-align:center;
+    font-weight: bolder;
+    font-size: 40px;
+  }
+
+  @media only screen and (max-width:300px) {
+    body .header .title {
+        font-size: 12px;
+      }
+  }
+
+  @media only screen and (min-width:301px) and (max-width:1600px) {
+    body .header .title {
+        font-size: calc(12px + (40 - 12) * ((100vw - 300px) / (1600 - 300)));
+      }
+  }
+
+  nav#menu {
+    margin: auto;
+    text-align: end;
+  }
+  
+  ul {
+  list-style-type: none;
+  }
+
+  @media only screen and (max-width:640px) {
+   ul {
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+      }
+  }
+
+  li {
+  display: inline;
+  }
+
+  a {
+  text-decoration: none;
+  font-weight: bolder;
+  padding: 5px;
+  color: #6d3119;
+  font-size: 20px;
+ }
+
+ a:hover {
+    color: #be3019;
+    background-color: transparent;
+  }
+  
+  @media only screen and (max-width:300px) {
+      nav#menu  {
+        font-size: 12px;
+    }
+  }
+
+  @media only screen and (min-width:301px) and (max-width:1600px) {
+    nav#menu  {
+        font-size: calc(12px + (30 - 12) * ((100vw - 300px) / (1600 - 300)));
+      }
+  }
+
+
+
+/* start: hamburger menü - Gabi live coding
+
+div#open {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  margin: 40px;
+  z-index: 9999;
+  background-color: black;
+  border-radius: 50%;
+  -webkit-transition: background-color 600ms;
+  transition: background-color 600ms;
+}
+
+div#open:hover {
+  background-color: #999;
+}
+
+div#open svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+div#open svg rect {
+  fill: white;
+  transform-box: fill-box;
+}
+
+div#open svg .a {
+  -webkit-transform: translate(10px, 11px);
+          transform: translate(10px, 11px);
+}
+
+div#open svg .b {
+  -webkit-transform: translate(10px, 18px);
+          transform: translate(10px, 18px);
+}
+
+body.clicked div#open svg .b {
+  opacity: 0;
+}
+
+div#open svg .c {
+  -webkit-transform: translate(10px, 25px);
+          transform: translate(10px, 25px);
+}
+
+nav#nav {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  right: -200px;
+  width: 200px;
+  height: 100vh;
+  background-color: #999;
+  color: white;
+  -webkit-transition: right 500ms;
+  transition: right 500ms;
+}
+
+body.clicked nav#nav {
+  right: 0;
+}
+
+
+*/
+/*# sourceMappingURL=style.css.map */
+
+/*
+section {
+  width: 100%;
+  height: 100vh;
+  color: white;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+}
+
+body.clicked section {
+  opacity: 0.7;
+}
+end: hamburger menü - Gabi live coding */
+
+
+/* -----------------MAIN-----------------------------------------*/
+
+
+section.about {
+  height: 85vh;
+  display: flex;
+}
+
+
+section.products {
+  height: 100vh;
+  display: flex;
+}
+
+section.booking {
+  height: 80vh;
+  display: flex;
+}
+
+/* -ABOUT - I.szint */ 
+ 
+  @media only screen and (max-width: 640px) {
+  main .about {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    height: fit-content;
+    justify-content: center;
+    }
+  }
+
+  @media only screen and (min-width: 641px) and (max-width: 1000px) {
+  main .about {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    height: fit-content;
+    justify-content: center;
+    }
+  }
+
+
+/* -ABOUT - Gyerek/II.szint: img, text */ 
+  main .about .box {
+  width: 50%;
+  text-align: center;
+  justify-content: space-evenly;
+  align-content: space-between;
+  }
+
+  main .about .list {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+  
+  @media only screen and (max-width:300px) {
+  main .about .list {
+    font-size: 12px;
+    }
+  }
+
+  @media only screen and (min-width:301px) and (max-width:1600px) {
+  main .about .list {
+    font-size: calc(12px + (20 - 12) * ((100vw - 300px) / (1600 - 300)));
+    }
+  }
+
+  button {
+  background-color: #6d3119;
+  color: #8bc34a;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 21px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 80%;
+  z-index:-1;
+  }
+
+  @media only screen and (max-width:300px) {
+  button {
+  font-size: 10px;
+    }
+  }
+
+  @media only screen and (min-width:301px) and (max-width:1600px) {
+  button {
+    font-size: calc(10px + (20 - 10) * ((100vw - 300px) / (1600 - 300)));
+    }
+  }
+
+  button:hover {
+    background-color: #be3019;
+    color: #fff;
+    font-size: 22px;
+    box-shadow: 5px 10px 8px #6d3119;
+  }
+  
+  @media only screen and (max-width:300px) {
+    button:hover {
+        font-size: 10px;
+      }
+  }
+
+  @media only screen and (min-width:301px) and (max-width:1600px) {
+    button:hover {
+        font-size: calc(10px + (22 - 10) * ((100vw - 300px) / (1600 - 300)));
+      }
+  }
+
+  main .about img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+
+
+  /* PRODUCTS -II.szint */ 
+  
+  @media only screen and (max-width: 640px) {
+  section.products {
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    }
+  }
+
+  @media only screen and (min-width: 641px) and (max-width: 1000px) {
+  section.products {
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    }
+  }
+
+  section.products .box {
+    width: 50%;
+    text-align: center;
+    justify-content: space-evenly;
+    align-content: space-between;
+  }
+
+  section.products img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+  }
+  
+  .table .products-items {
+  padding:50px;
+  }
+
+  @media only screen and (max-width:300px) {
+    .table .products-items  {
+        font-size: 10px;
+      }
+  }
+
+  @media only screen and (min-width:301px) and (max-width:1600px) {
+    .table  {
+        font-size: calc(10px + (18 - 10) * ((100vw - 300px) / (1600 - 300)));
+     }
+  }
+
+  /* ----BOOKING----I-szint -  */  
+
+  /* ----BOOKING----II.-szintGyerek: img, fill-form */ 
+  @media only screen and (max-width: 640px) {
+  section.booking {
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    }
+  }
+
+  @media only screen and (min-width: 641px) and (max-width: 1000px) {
+  section.booking {
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: fit-content;
+    justify-content: center;
+    }
+  }
+
+  main .booking .box {
+  width: 50%;
+  justify-content: space-evenly;
+  align-content: space-between;
+  }
+
+  .booking img {
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+  }
+
+/* ------FORM------- */
+/* A keretek: form konténer és a fieldset formázása */
+
+.fill-form {
+  width:80%;
+   
+}
+.form-container {
+  border-radius: 5px;
+  margin: auto;
+  margin-left:20px;
+  }
+
+.form-container fieldset {
+  width: 80%;
+  height: 100%;
+  padding: 10px 25px 0px;
+  background-color:#6d311925;
+}
+
+.form-container fieldset legend {
+ font-weight: bolder;
+  color:#6d3119;
+ 
+}
+/* Set a style for the form element*/
+fieldset.form input, select { 
+  width:90%;
+  border: 1px solid #e3d3be;
+  border-radius: 4px;
+  margin: 0px 0;
+  outline: none;
+  padding: 8px 8px 8px 50px;
+  box-sizing: border-box;
+  transition: 0.3s;
+  position: relative;
+  }
+
+.gdpr {
+  text-align:left;
+}
+
+.gdpr-btn {
+  width: 500px;
+  height: 100%;
+  width: 100%;
+  padding: 0px 0px 0px 0 px;
+  border-top: 0;
+
+ }
+
+input:focus {
+  border-color: #8bc34a;
+  box-shadow: 0 0 8px 0 #8bc34a;
+}
+
+select:focus {
+  border-color: #8bc34a;
+  box-shadow: 0 0 8px 0 #8bc34a;
+}
+.inputWithIcon input {
+  padding-left: 40px;
+}
+
+.inputWithIcon {
+  position: relative;
+}
+
+.inputWithIcon i {
+  position: absolute;
+  left: 0;
+  top: 27px;
+  padding-top:5px;
+  color: #6d3119;
+  transition: 0.3s;
+ font-size: 2em;
+ z-index:2;
+}
+
+.inputWithIcon input[type="text"]:focus + i {
+  color:#8bc34a;
+}
+   
+/* Set a style for the submit button */
+.btn {
+  background-color: #6d3119;
+  color: #8bc34a;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 15px 20px;
+  margin-bottom:20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.8
+  }
+
+.btn:hover {
+  color: #8bc34a;
+  background-color: #be3019;
+}
+
+@media only screen and (max-width:300px) {
+    .help-block  {
+        font-size: 12px;
+      }
+  }
+
+  @media only screen and (min-width:301px) and (max-width:1600px) {
+    .help-block  {
+        font-size: calc(12px + (20 - 12) * ((100vw - 300px) / (1600 - 300)));
+      }
+  }
+
+</style>
+
+
+</head>
+<body>
+  <header class="header">
+
+      <div class="box logo"><img src="logo.png" alt="logo">
+      </div>
+
+      <div class="box title">KEMENCE MELEGE PIZZÉRIA</div>  
+      <!--
+     <div class="box" id="open">
+          <svg viewBox="0 0 40 40">
+              <rect class="a" x="0" y="0" width="20" height="2"/>
+              <rect class="b" x="0" y="0" width="20" height="2"/>
+              <rect class="c" x="0" y="0" width="20" height="2"/>
+          </svg>
+      </div>
+      -->
+
+      <nav class="box" id="menu">
+          <ul>
+              <li><a href="#about">Rólunk</a></li>
+              <li><a href="#products">Termékeink</a></li>
+              <li><a href="#services">Asztalfoglalás</a></li>
+              <li><a href="#contact">Kapcsolat</a></li>
+          </ul>
+      </nav>
+  </header>
+
+
+<main class="flexbox" id="main">
+    <section class="about" id="about">
+
+        <div class="box text">
+            <h1><b>AZ AUTENTIKUS, HÁZIAS OLASZ PIZZÁT NÁLUNK TALÁLJA!</b></h1>
+            <div class="list"> Ételeinket olasz szakács készíti</div>
+            <div class="list">A pizzáink tízféle kombinációban rendelhetőek!</div>
+            <div class="list">Éttermünkben 60 főig vállaljuk rendezvények lebonyolítását, nyáron pedig a kerthelyiségünk esküvők színhelyéül is szolgál.</div>
+            <div class="list">Jöjjön el Ön is hozzánk családjával, barátaival, és tartsa nálunk a fontos összejöveteleket!</div>
+            <h2>Várja Önöket szeretettel a Kemence Melege! </h2>
+            <div><a href="../booking.html"><button class=" button"><b>ASZTALFOGLALÁS</b></button></a></div>
+        </div>
+            
+        <div class="box img">
+          <img src="../pizza-fire-1920-1280.jpg" alt="pizza-fire">
+        </div>
+    </section>
+
+  
+    <section class="products" id="products">
+
+        <div class="box img">
+            <img src="../food-1920-1280.jpg" alt="Pizzeria">
+        </div>
+
+        <div class="box products-items">
+          <h2><b>ÉTLAP</b></h2>
+
+          <div class="table">
+              <table>
+                  <tr>
+                    <td>PIZZA MARGHERITA <br>Paradicsomszósz, mozzarella, koktélparadicsom</td>
+                    <td>1550&nbsp;Ft</td>
+                  </tr>
+                  <tr>
+                    <td>PIZZA FUNGHI <br>Paradicsomszósz, gomba, mozzarella</td>
+                    <td>1550&nbsp;Ft</td>
+                  </tr>
+                  <tr>
+                    <td>PIZZA SICILIA <br>Paradicsomszósz, sonka, mozzarella</td>
+                    <td>1550&nbsp;Ft</td>
+                  </tr>
+                  <tr>
+                    <td>PIZZA SALAMI <br>Paradicsomszósz, szalámi, gomba, mozzarella</td>
+                    <td>1550&nbsp;Ft</td>
+                  </tr>
+                  <tr>
+                    <td>PIZZA HAWAII <br>Paradicsomszósz, sonka, ananász, mozzarella</td>
+                    <td>1550&nbsp;Ft</td>
+                  </tr>
+                  <tr>
+                    <td>PIZZA VERONA <br>Paradicsom szósz, szardella, kapribogyó, mozzarella</td>
+                    <td>1650&nbsp;Ft</td>
+                  </tr>
+                  <tr>
+                    <td>PIZZA RAVENNA <br>Paradicsomszósz, sonka, hagyma, tükörtojás, mozzarella</td>
+                    <td>1650&nbsp;Ft</td>
+                  </tr>
+                  <tr>
+                    <td>PIZZA FIRENZE <br>Paradicsomszósz, füstölt sajt, brokkoli, paradicsom, mozzarella</td>
+                    <td>1650&nbsp;Ft</td>
+                  </tr>
+                  <tr>
+                    <td>PIZZA FRUTTI DI MARE <br>Paradicsomszósz, tenger gyümölcsei, olívabogyó, mozzarella</td>
+                    <td>1750&nbsp;Ft</td>
+                  </tr>
+                  <tr>
+                    <td>SALMONE ORIGINALE <br>Paradicsomszósz, füstölt lazac, citrom, avokádó, mozzarella</td>
+                    <td>1750&nbsp;Ft</td>
+                  </tr>
+              </table>
+          </div> 
+
+        </div>
+    </section>
+
+    <section class="booking" id="booking">     
+      <div class="box fill-form">
+        <form name="myForm" class="form-container" novalidate>
+          <fieldset class="form">
+            <legend>Foglaljon asztalt egyszerűen</legend>
+      
+            <!--Név -->
+            <div class="inputWithIcon">
+                <span class="help-block">Adja meg vezeték és keresztnevét</span>
+                <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+            </div>
+            <input type="text" name="name" required><br>
+            <span id="nameerror" style="color:#be3019; display:none;">Kérem adja meg Nevét!</span><br>
+      
+            <!--emailcím -->
+            <div class="inputWithIcon">
+              <span class="help-block">Adja meg emailcímét</span>
+              <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true"></i>
+              <input type="email" name="email"><br>
+              <span id="emailerror" style="color:#be3019; display:none;">Kérem adjon meg helyes emailcímet!</span><br>
+            </div>
+      
+            <!--dátum -->
+            <div class="inputWithIcon">
+              <span class="help-block">Adja meg a foglalás dátumát</span>
+              <label for="checkin"></label>
+              <i class="fa fa-calendar fa-lg fa-fw" aria-hidden="true"></i>
+              <input type="date" name="date" id="datepicker" ><br>
+            <span id="dateerror" style="color:#be3019; display:none;">Kérem adjon meg helyes dátumot!</span><br>
+            </div>
+      
+            <!--időpont -->
+            <div class="inputWithIcon">
+              <span class="help-block">Adja meg a foglalás időpontját</span>
+              <label for="time"></label>
+      
+              <i class="fa fa-clock-o fa-lg fa-fw" aria-hidden="true"></i>
+      
+              <input type="time" name="time" id="time"><br>
+              <span id="timeerror" style="color:#be3019; display:none;">Kérem adjon meg helyes időpontot!</span><br>
+              <span id="datetimeerror" style="color:#be3019; display:none;">Kérem legalább egy órával előre foglaljon!</span><br>
+            </div>
+      
+            <!--vendégek száma -->
+      
+            <div class="inputWithIcon">
+              <span class="help-block">Adja meg a vendégek számát</span>
+              <label for="guests"></label>
+      
+              <i class="fa fa-users fa-lg fa-fw" aria-hidden="true"></i>
+      
+              <select type="text" id="guests" name="guests" placeholder="Vendég szám">
+      
+                <option value="1">1 fő</option>
+                <option value="2">2 fő</option>
+                <option value="3">3 fő</option>
+                <option value="4">4 fő</option>
+                <option value="5">5 fő</option>
+                <option value="6">6 fő</option>
+                <option value="7">7 fő</option>
+                <option value="8">8 fő</option>
+               </select>
+                <br><br>
+              </div>
+ <!--        </fieldset>
+          ÁSZF elfogadása
+         <fieldset class="gdpr-btn"> --> 
+            <div class="gdpr-btn">
+      
+              <input type="checkbox" name="gdpr" value="gdpr">
+              <label class="gdpr" for="gdpr">Az Általános Szerződési Feltételeket és az Adatkezelési tájékoztatót elolvastam és elfogadom
+              </label>
+              <br>
+              <span id="gdprerror" style="color:#be3019; display:none;">Kérem Fogadja el a Szerződési Feltételeket!</span><br>
+      
+              <!-- Button-->
+              <button type="submit" id="reserve" class="btn">Foglalás</button>
+            </div>
+          </fieldset>
+         </form>
+      </div>
+
+      <div class="box img">
+        <img src="../pizza-table.jpg">
+      </div>
+    </section>
+</main>
+  
+<script>
+  function pageLoaded() {
+    function clickEvent(){
+        //Ez is jó megoldás, de css-ben le kell kezelni a clicked class nevet közvetlen az elemeken.
+        //document.getElementById("open").classList.toggle("clicked");
+        //document.getElementById("nav").classList.toggle("clicked");
+
+        document.querySelector("body").classList.toggle("clicked");
+    }
+    document.getElementById("open").addEventListener("click", clickEvent);
+}
+
+
+window.addEventListener("load", pageLoaded);
+</script>
+</body>
+</html>
