@@ -1,0 +1,99 @@
+* 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* class="flexbox" a Nagymama. beállítjuk a 3 nagy sectiont (header,About,Products,Booking)*/
+
+.flexbox {
+  display: flex;
+  height: 100vh;
+  align-content: flex-start; /* main axis-on hol helyezkedjenek el az elemek */
+  justify-content: center; /* cross axis-on hol helyezkedjenek el az elemek */
+}
+
+.box {
+ border: 2px solid black;
+}
+
+/* 1. section Anyu: header */ 
+.header {
+  border: 2px solid black;
+  height: 10vh;
+  }
+
+
+  /* 1. section Gyerek: logo, name, navbar */ 
+  body .header .box {
+    width: 33.3333%;
+  }
+
+  /* 2. section Anyu: about */ 
+.about {
+  border: 2px solid black;
+  height: 90vh;
+  }
+
+  /* 2. section Gyerek: img, text */ 
+  body .about .box {
+    width: 50%;
+  }
+
+ /* 3. section Anyu: products */ 
+ .products {
+   border: 2px solid black;
+  height: 100vh;
+   }
+
+  /* 3. section Gyerek: table, img */ 
+  body .produts .box {
+    width: 50%;
+  }
+
+   /* 4. section Anyu: booking */ 
+ .booking {
+  border: 2px solid black;
+  height: 100vh;
+  }
+
+  /* 4. section Gyerek: img, fill-form */ 
+  body .booking .box {
+    width: 50%;
+  }
+
+  
+  @media only screen and (max-width: 600px) {
+    .header {
+      background-color: purple;
+      flex-wrap:wrap;
+      flex-direction: column;
+      height: 20vh;
+    }
+  }
+  
+    .about {
+      background-color: purple;
+      flex-wrap:wrap;
+      flex-direction: column;
+      height: 20vh;
+    }
+
+
+   
+    @media only screen and (min-width: 601px) and (max-width: 650px) {
+      .header {
+      background-color: orange;
+      flex-wrap:wrap;
+      flex-direction: column;
+      height: 20vh;
+      }
+  }
+  @media only screen and (min-width: 651px) and (max-width: 700px) {
+    .header {
+      background-color: red;
+      flex-wrap:wrap;
+      flex-direction: column;
+      height: 20vh;
+      }
+  }
